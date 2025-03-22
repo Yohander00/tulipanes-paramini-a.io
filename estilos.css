@@ -1,0 +1,335 @@
+/* Estilos generales y reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e2eafc 100%);
+  }
+  
+  .contenedor {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* Mensaje principal */
+  .mensaje {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10;
+    animation: aparecer 2s ease-out;
+  }
+  
+  .titulo {
+    font-size: 2.5rem;
+    color: #ff4b8d;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .subtitulo {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Ramo de tulipanes */
+  .ramo {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Tulipanes */
+  .tulipan {
+    position: absolute;
+    bottom: 0;
+    transform-origin: bottom center;
+  }
+  
+  .tulipan-1 {
+    left: 20%;
+    transform: rotate(-10deg);
+    animation: balanceo 6s ease-in-out infinite, aparecer 2s ease-out 0.2s backwards;
+  }
+  
+  .tulipan-2 {
+    left: 30%;
+    transform: rotate(-5deg);
+    animation: balanceo 7s ease-in-out infinite, aparecer 2s ease-out 0.4s backwards;
+  }
+  
+  .tulipan-3 {
+    left: 40%;
+    transform: rotate(-2deg);
+    animation: balanceo 6.5s ease-in-out infinite, aparecer 2s ease-out 0.6s backwards;
+  }
+  
+  .tulipan-central {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    animation: balanceo 8s ease-in-out infinite, aparecer 2s ease-out 0.8s backwards;
+  }
+  
+  .tulipan-4 {
+    right: 40%;
+    transform: rotate(2deg);
+    animation: balanceo 7.5s ease-in-out infinite, aparecer 2s ease-out 1s backwards;
+  }
+  
+  .tulipan-5 {
+    right: 30%;
+    transform: rotate(5deg);
+    animation: balanceo 6s ease-in-out infinite, aparecer 2s ease-out 1.2s backwards;
+  }
+  
+  .tulipan-6 {
+    right: 20%;
+    transform: rotate(10deg);
+    animation: balanceo 6.5s ease-in-out infinite, aparecer 2s ease-out 1.4s backwards;
+  }
+  
+  /* Tallo y hojas */
+  .tallo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 6px;
+    height: 180px;
+    background: linear-gradient(to top, #2d8a30, #52b155);
+    transform: translateX(-50%);
+    border-radius: 3px;
+  }
+  
+  .hoja {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    background: linear-gradient(to top, #2d8a30, #4caf50);
+    border-radius: 50% 50% 0 50%;
+    transform-origin: bottom center;
+  }
+  
+  .hoja-izq {
+    bottom: 60px;
+    left: -15px;
+    transform: rotate(30deg);
+  }
+  
+  .hoja-der {
+    bottom: 90px;
+    right: -15px;
+    transform: rotate(-30deg) scaleX(-1);
+  }
+  
+  /* Flor de tulipán */
+  .flor {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    width: 40px;
+    height: 60px;
+    transform-origin: bottom center;
+    transform: translateX(-50%);
+  }
+  
+  .petalo {
+    position: absolute;
+    width: 25px;
+    height: 60px;
+    background: #ffeb3b; /* Amarillo */
+    border-radius: 50% 50% 0 0;
+    transform-origin: bottom center;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+  }
+  
+  .petalo-1 {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+  
+  .petalo-2 {
+    transform: translateX(-50%) rotate(-25deg);
+  }
+  
+  .petalo-3 {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  
+  .petalo-4 {
+    transform: translateX(-50%) rotate(15deg);
+  }
+  
+  .petalo-5 {
+    transform: translateX(-50%) rotate(35deg);
+  }
+  
+  .petalo-6 {
+    transform: translateX(-50%) rotate(55deg);
+  }
+  
+  /* Botón flotante */
+  .boton-flotante {
+    position: fixed;
+    bottom: 40px;
+    z-index: 100;
+    animation: latido 1.5s ease-in-out infinite;
+  }
+  
+  #boton-mensaje {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 118, 140, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  #boton-mensaje:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(255, 118, 140, 0.6);
+  }
+  
+  #boton-mensaje:active {
+    transform: translateY(1px);
+  }
+  
+  /* Mensaje secreto */
+  .mensaje-secreto {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .mensaje-secreto.activo {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .mensaje-contenido {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    animation: aparecer 1s ease-out;
+  }
+  
+  .mensaje-contenido h2 {
+    color: #ff4b8d;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .mensaje-contenido p {
+    color: #666;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .corazon-latido {
+    font-size: 5rem;
+    animation: latido 1s ease-in-out infinite;
+  }
+  
+  /* Partículas */
+  .particula {
+    position: absolute;
+    background: rgba(255, 235, 59, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  
+  /* Animaciones */
+  @keyframes balanceo {
+    0%, 100% {
+      transform: rotate(var(--rotacion, 0deg));
+    }
+    50% {
+      transform: rotate(calc(var(--rotacion, 0deg) + 3deg));
+    }
+  }
+  
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes latido {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  @keyframes flotar {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .titulo {
+      font-size: 2rem;
+    }
+    
+    .subtitulo {
+      font-size: 1rem;
+    }
+    
+    .ramo {
+      width: 300px;
+      height: 400px;
+    }
+    
+    .mensaje-contenido h2 {
+      font-size: 2rem;
+    }
+    
+    .mensaje-contenido p {
+      font-size: 1.2rem;
+    }
+  }
